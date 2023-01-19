@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "commonjs",
+    "strict": true,
+    "allowJs": true,
+    "checkJs": false,
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true,
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "rootDirs": [
+      "./src",
+      "./test"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "src/*": [
+        "src/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "test/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
