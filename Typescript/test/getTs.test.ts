@@ -1,5 +1,5 @@
-import {get} from 'src/getTs';
-import {Airports} from 'src/airportType';
+import {get} from '../src/getTs';
+import {Airports} from '../src/airportType';
 
 describe('Get tests', () => {
   it('should call the airports api and get a response', async () => {
@@ -11,6 +11,9 @@ describe('Get tests', () => {
   it('should be able to find the long/lat of Yellowknife', async () => {
     const response = await get<Airports>('https://api.westjet.com/destination-service/v1/en-CA/airports');
     const yellowknife = response.airports.find(airport => airport.name === 'Yellowknife');
+
+    // One of those odd TS compiler issues.
+    // We know 100% that yellowknife is defined, but the compiler doesn't recognize it.
     expect(yellowknife).toBeDefined();
     expect(yellowknife.latitude).toBe(62.470869);
     expect(yellowknife.longitude).toBe(-114.4375);
@@ -38,5 +41,6 @@ describe('Get tests', () => {
     expect(yellowknife).toBeDefined();
     expect(yellowknife.lat).toBe(62.470869);
   });
+
 });
 

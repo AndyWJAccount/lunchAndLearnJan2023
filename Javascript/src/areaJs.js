@@ -1,6 +1,6 @@
-// shape {kind, radius, or sidelength}
+// shape {type, radius, or sidelength}
 export const getArea = (shape) => {
-  switch (shape.kind) {
+  switch (shape.type) {
     case "circle":
       return Math.PI * shape.radius ** 2;
     case "square":

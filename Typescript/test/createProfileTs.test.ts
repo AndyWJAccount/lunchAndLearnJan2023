@@ -1,4 +1,4 @@
-import {createProfile} from 'src/createProfileTs';
+import {createProfile} from '../src/createProfileTs';
 
 describe('Create Profile', () => {
   it('should handle valid string params - string', () => {
@@ -35,6 +35,7 @@ describe('Create Profile', () => {
     expect(profile.dateOfBirth).toEqual('30-11-2000');
     expect(profile.age).toEqual(22);
   });
+
 });
 
 

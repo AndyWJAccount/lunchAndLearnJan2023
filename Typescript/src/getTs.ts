@@ -29,7 +29,7 @@ const createConfig = (params?: Record<string, string>,
   return config;
 };
 
-const get = async <ResponseType>(
+export const get = async <ResponseType>(
   url: string,
   params?: Record<string, string>,
   headers?: RawAxiosRequestHeaders,
@@ -40,8 +40,3 @@ const get = async <ResponseType>(
 
   return resp.data;
 }
-
-
-export {
-  get
-};

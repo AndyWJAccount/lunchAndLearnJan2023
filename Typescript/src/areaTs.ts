@@ -1,24 +1,47 @@
+type PolygonType = 'square' | 'circle';
+
 interface Polygon {
-  kind: 'square' | 'circle';
+  type: PolygonType;
 }
 
 interface Circle extends Polygon {
-  kind: 'circle';
+  type: 'circle';
   radius: number;
 }
 
 interface Square extends Polygon {
-  kind: 'square';
+  type: 'square';
   sideLength: number;
 }
 
 type Shape = Circle | Square;
 
+// --------------------------------------------
+
 export const getArea = (shape: Shape) => {
-  switch (shape.kind) {
+  switch (shape.type) {
     case 'circle':
       return Math.PI * shape.radius ** 2;
     case 'square':
       return shape.sideLength ** 2;
   }
 };
+
+
+
+
+
+
+
+// --------------------------------------------
+
+export type Operation<CalculateResponse> = {
+  type: 'AreaCircle' | 'AreaSquare',
+  calculate: (value: number) => CalculateResponse
+};
+
+export const getArea2 = <CalculateResponse>(value: number, op: Operation<CalculateResponse>) => {
+  return op.calculate(value);
+};
+
+
